@@ -1,6 +1,8 @@
-package com.example.demo;
+package com.example.demo.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.example.demo.pages.GroupPage;
+import com.example.demo.tags.GroupTag;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -25,6 +27,7 @@ public class GroupPageTest {
 
     @ParameterizedTest(name = "Проверка на то, что цена положительная")
     @ValueSource(ints = {0, 100, 200})
+    @GroupTag
     public void testInfo(int price){
         groupPage.checkName();
         groupPage.checkPrice();

@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.pages;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
