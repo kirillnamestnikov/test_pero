@@ -3,7 +3,6 @@ package com.example.demo;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Selenide.*;
 
@@ -23,6 +22,6 @@ public class ProductPageTest {
 
     @Test
     public void testInfo(){
-        productPage.checkPrice();
+        productPage.checkName().checkPrice().checkDescription();
     }
 }

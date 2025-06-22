@@ -7,10 +7,24 @@ import com.codeborne.selenide.SelenideElement;
 // page_url = https://vk.com/club225299895?w=product-225299895_10044406
 public class ProductPage {
     private final SelenideElement price = $x("//h2[@data-testid='market_item_page_price']");
+    private final SelenideElement name = $x("//h1[@data-testid='market_item_page_title']");
+    private final SelenideElement description = $x("//div[@data-testid='market_item_page_description']");
 
     public ProductPage checkPrice(){
         price.shouldBe(visible.because("На странице с товаром должна быть цена")
                 ).shouldHave(text("бесплатно"));
+        return this;
+    }
+
+    public ProductPage checkName(){
+        name.shouldBe(visible.because("На странице с товаром должно быть его имя")
+                ).shouldHave(text("фываф"));
+        return this;
+    }
+
+    public ProductPage checkDescription(){
+        description.shouldBe(visible.because("На странице с товаром должно быть его описание")
+        ).shouldHave(text("testing product"));
         return this;
     }
 }
