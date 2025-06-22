@@ -1,15 +1,18 @@
 package com.example.demo;
 
 import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.junit.jupiter.api.*;
 
 import static com.codeborne.selenide.Selenide.*;
 
 public class ProductPageTest {
+    private ProductPage productPage = new ProductPage();
     @BeforeAll
     public static void setUpAll() {
         Configuration.browserSize = "1280x800";
+        Configuration.timeout = 10000;
     }
 
     @BeforeEach
@@ -19,7 +22,7 @@ public class ProductPageTest {
     }
 
     @Test
-    public void search() throws InterruptedException {
-        Thread.sleep(1_000);
+    public void testInfo(){
+        productPage.checkPrice();
     }
 }
